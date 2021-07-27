@@ -1,0 +1,12 @@
+<h1>Your result</h1>
+<% if @included %>
+  <% if @english_word %>
+  <h3>Good work <strong><%= @word %></strong> is a valid English word</h3>
+  <% else %>
+  <h3>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</h3>
+  <% end %>  
+<% else %>
+<h3>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></h3>
+<% end %>
+
+<p><%= link_to("Restart", new_path) %></p>
